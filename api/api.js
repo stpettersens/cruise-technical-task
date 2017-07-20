@@ -20,7 +20,7 @@ const Cruise = require('./models/cruise')
 let data = fs.readJsonSync('../data/apihost.json')
 console.log(JSON.stringify(data, null, 2))
 let apihost = new ApiHost({
-  host: 'http://' + window.location.hostname,
+  host: data.host,
   port: data.port,
   origin: data.origin
 })
