@@ -15,5 +15,4 @@
 > `npm run dist`
 
 * Build and run the Docker container.
-> `sh build.sh`
-> `sh run.sh`
+> `sh build.sh && sh run.sh`
