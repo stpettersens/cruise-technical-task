@@ -3,6 +3,7 @@ node_modules/
 clientside/
 public/phpinfo.php
 imports.js
+runner.js
 jsconfig.json
 *.sh
 .dummy
