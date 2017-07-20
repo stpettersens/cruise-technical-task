@@ -20,7 +20,7 @@ RUN apt-get install -y php-pear php5-dev libcurl3-openssl-dev
 RUN pecl install mongo && echo "extension=mongo.so" >> /etc/php5/cgi/php.ini
 
 # Check Node.js and npm versions.
-RUN echo 'node $(node --version)' && echo 'npm v$(npm --version)'
+RUN echo "node $(node --version)" && echo "npm v$(npm --version)"
 
 # Expose the app and api servers on port 8080 and 8081.
 EXPOSE 8080
