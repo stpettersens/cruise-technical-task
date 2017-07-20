@@ -27,30 +27,19 @@ EXPOSE 8080
 EXPOSE 8081
 
 # Create db directory.
-#RUN mkdir -p /data/db
+RUN mkdir -p /data/db
 
 # Create app directory.
-#RUN mkdir -p /usr/src/app
-#WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 # Bundle app source.
-#COPY . /usr/src/app
-
-# Install deployment dependencies for app.
-#RUN npm install
-
-# Deploy clientside JavaScript + CSS.
-#RUN npm run dist
-
-# Clobber now unnecessary directories:
-# node_modules/ in root and client-side/.
-#RUN rm -r -f node_modules/
-#RUN rm -r -f clientside/
+COPY . /usr/src/app
 
 # Install dependencies for api server (Node.js "express" application).
-#WORKDIR /usr/src/app/api
-#RUN npm install --production
+WORKDIR /usr/src/app/api
+RUN npm install --production
 
 # Serve app.
-#WORKDIR /usr/src/app/public
-#CMD mongod | node /usr/src/app/api/api.js | php-cgi -b 9001 | caddy
+WORKDIR /usr/src/app/public
+CMD mongod | node /usr/src/app/api/api.js | php-cgi -b 9001 | caddy
