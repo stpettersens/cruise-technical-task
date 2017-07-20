@@ -19,35 +19,38 @@ RUN apt-get update && apt-get install -y php5 php5-cgi php5-phalcon mongodb-org
 RUN apt-get install -y php-pear php5-dev libcurl3-openssl-dev
 RUN pecl install mongo && echo "extension=mongo.so" >> /etc/php5/cgi/php.ini
 
+# Check Node.js and npm versions.
+RUN echo 'node $(node --version)' && echo 'npm v$(npm --version)'
+
 # Expose the app and api servers on port 8080 and 8081.
 EXPOSE 8080
 EXPOSE 8081
 
 # Create db directory.
-RUN mkdir -p /data/db
+#RUN mkdir -p /data/db
 
 # Create app directory.
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+#RUN mkdir -p /usr/src/app
+#WORKDIR /usr/src/app
 
 # Bundle app source.
-COPY . /usr/src/app
+#COPY . /usr/src/app
 
 # Install deployment dependencies for app.
-RUN npm install
+#RUN npm install
 
 # Deploy clientside JavaScript + CSS.
-RUN npm run dist
+#RUN npm run dist
 
 # Clobber now unnecessary directories:
 # node_modules/ in root and client-side/.
-RUN rm -r -f node_modules/
-RUN rm -r -f clientside/
+#RUN rm -r -f node_modules/
+#RUN rm -r -f clientside/
 
 # Install dependencies for api server (Node.js "express" application).
-WORKDIR /usr/src/app/api
-RUN npm install --production
+#WORKDIR /usr/src/app/api
+#RUN npm install --production
 
 # Serve app.
-WORKDIR /usr/src/app/public
-CMD mongod | node /usr/src/app/api/api.js | php-cgi -b 9001 | caddy
+#WORKDIR /usr/src/app/public
+#CMD mongod | node /usr/src/app/api/api.js | php-cgi -b 9001 | caddy
