@@ -9,7 +9,7 @@
 #### Deploying
 
 * Set the external IP or domain for the api server in `data/apihost.json`.
-> {"host":"http://localhost","port":8081,"origin":8080}
+> {"host":"http host here","port":8081,"origin":8080}
 
 * Install deployment dependencies for app.
 > `npm install`
