@@ -4,6 +4,7 @@ clientside/
 public/phpinfo.php
 imports.js
 runner.js
+Gulpfile.js
 jsconfig.json
 *.sh
 .dummy
