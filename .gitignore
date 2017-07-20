@@ -1,4 +1,5 @@
 node_modules/
+public/js/*.js
 *.min.css
 *.min.js
 *.ctrl.js

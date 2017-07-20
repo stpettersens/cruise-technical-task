@@ -100,7 +100,7 @@ router.route('/cruises/from/:cruise_from')
 router.route('/robots.txt')
 .get(function (req, res) {
   res.setHeader('Content-Type', 'text/plain')
-  let robots = [];
+  let robots = []
   robots.push('User-agent: *')
   robots.push('Disallow: /')
   res.send(robots.join('\n'))
