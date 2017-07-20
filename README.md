@@ -14,8 +14,6 @@
 * Deploy clientside JavaScript + CSS.
 > `npm run dist`
 
-* Build the Docker image.
+* Build and run the Docker container.
 > `sh build.sh`
-
-* Run the Docker container.
 > `sh run.sh`
