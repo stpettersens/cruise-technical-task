@@ -1,0 +1,11 @@
+.git/
+node_modules/
+clientside/
+public/phpinfo.php
+Gulpfile.js
+imports.js
+jsconfig.json
+build.sh
+run.sh
+stop_rm.sh
+.dummy

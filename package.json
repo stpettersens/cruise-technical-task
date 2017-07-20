@@ -1,0 +1,36 @@
+{
+  "name": "cruise_technical_task",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cruise technical task exercise written with Node.js, PHP/Phalcon and Vue.js.",
+  "main": "runner.js",
+  "scripts": {
+    "start": "node runner.js",
+    "dist": "gulp",
+    "clean": "gulp clean"
+  },
+  "author": "Sam Saint-Pettersen <s.stpettersen+github@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^3.3.7",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-insert": "^0.5.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-remove-empty-lines": "0.0.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-standard": "^8.0.2",
+    "gulp-standard-format": "0.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-vuecc": "^0.2.0",
+    "gulp-wait": "0.0.2",
+    "jquery": "^2.2.4",
+    "shelljs": "^0.7.8",
+    "vue": "^1.0.28"
+  }
+}

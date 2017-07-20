@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    <title>Cruises</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Content-Location" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apihost" content="<?php echo $apihost[0] . ':' . $apihost[1]; ?>">
+    <link rel="stylesheet" type="text/css" href="/css/dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/cruises.min.css">
+    <script type="text/javascript" src="/js/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/dist/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/dist/vue.min.js"></script>
+    <script type="text/javascript" src="/js/parsedate.js"></script>
+    <script type="text/javascript" src="/js/app.ctrl.js"></script>
+  </head>
+  <nav class="navbar navbar-default">
+    <div class="header">
+      <h4>Cruises</h4>
+    </div>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="app" class="collapse navbar-collapse" id="top-navigation">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            ID <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li onclick="app.showAllCruises()">Any</li>
+              <?php
+              $i = 0;
+              foreach (array_unique($ids) as $id) {
+                if ($i == 0) echo '<li onclick="app.selectCruiseId(' . $id . ')">' . $id . '</li>' . PHP_EOL;
+                else echo "\t\t\t <li onclick=\"app.selectCruiseId(" . $id . ')">' . $id . '</li>' . PHP_EOL;
+                $i++;
+              }
+              ?>
+            </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            From <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li onclick="app.showAllCruises()">Any</li>
+              <?php
+              $i = 0;
+              foreach (array_unique($froms) as $from) {
+                if ($i == 0) echo '<li onclick="app.selectCruiseFrom(\'' . $from . '\')">' . $from . '</li>' . PHP_EOL;
+                else echo "\t\t\t  <li onclick=\"app.selectCruiseFrom('" . $from . '\')">' . $from . '</li>' . PHP_EOL;
+                $i++;
+              }
+              ?>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Destination <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li onclick="app.showAllCruises()">Any</li>
+              <?php
+              $i = 0;
+              foreach (array_unique($dests) as $dest) {
+                if ($i == 0) echo '<li onclick="app.selectCruiseTo(\'' . $dest . '\')">' . $dest . '</li>' . PHP_EOL;
+                else echo "\t\t\t <li onclick=\"app.selectCruiseTo('" . $dest . '\')">' . $dest . '</li>' . PHP_EOL;
+                $i++;
+              }
+              ?>
+            </ul>
+          </li>
+          <?php
+          /*<li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             Date <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li onclick="app.showAllCruises()">Any</li>
+               <?php
+               /*$i = 0;
+               foreach (array_unique($dates) as $date) {
+                 if ($i == 0) echo '<li onclick="app.selectCruiseOn(' . $date . ')>' . date('M d Y', $date) . '</li>' . PHP_EOL;
+                 else echo "\t\t\t <li onclick=\"app.selectCruiseOn('" . $date . '\'">' . date('M d Y', $date) . '</li>' . PHP_EOL;
+                 $i++;
+               }
+               ?>
+              </ul>
+          </li>*/
+          ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <body>
+    <div id="cruises-app">
+      <div id="cruise-container" class="well well-lg">
+        <table id="cruise-data" class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>From</th>
+              <th>Destination</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          $index = 1000;
+          $i = 0;
+          foreach ($cruises as $cruise) {
+              if ($i == 0) echo "\t<tr>" . PHP_EOL;
+              else echo "\t\t\t<tr>" . PHP_EOL;
+              echo "\t\t\t  <td>" . $cruise->cid . '</td>' . PHP_EOL;
+              echo "\t\t\t  <td>" . $cruise->from . '</td>' . PHP_EOL;
+              echo "\t\t\t  <td>" . $cruise->dest . '</td>' . PHP_EOL;
+              echo "\t\t\t  <td>" . date('M d Y', $cruise->date->sec) . '</td>' . PHP_EOL;
+              echo "\t\t\t</tr>" . PHP_EOL;
+              $i++;
+              $index += 400;
+          }
+          ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <?php
+    echo '<a id="prev-pg" href="javascript:app.showCruiseRange(' . ($index - 2500) . ',' . $index .
+    ')">&lt; Previous</a>' . PHP_EOL;
+    echo '<a id="next-pg" href="javascript:app.showCruiseRange(' . $index . ',' . ($index + 2800) .
+    ')">Next &gt;</a>' . PHP_EOL;
+    ?>
+    <footer id="copyright">
+    Copyright &copy; 2016/17 Sam Saint-Pettersen.
+    </footer>
+  </body>
+</html>

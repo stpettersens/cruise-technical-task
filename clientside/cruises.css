@@ -1,0 +1,37 @@
+.navbar, .navbar-collapse, body, th {
+    text-align: center;
+    font-family: "Verdana", "Helevetica", sans-serif;
+    font-size: 11pt;
+}
+
+.header {
+    color: #777777;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+#copyright, td {
+    font-size: 9pt;
+}
+
+li {
+    cursor: pointer;
+}
+
+#prev-pg {
+    text-decoration: none;
+    color: #777777;
+    margin-left: 25px;
+    float: left;
+}
+
+#next-pg {
+    text-decoration: none;
+    color: #777777;
+    margin-right: 25px;
+    float: right;
+}

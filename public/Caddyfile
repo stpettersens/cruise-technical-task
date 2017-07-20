@@ -1,0 +1,13 @@
+:8080
+
+fastcgi / 127.0.0.1:9001 {
+    ext .php
+    split .php
+    index index.php
+}
+
+rewrite {
+    regexp .*
+    ext    /
+    to     /index.php?_url=/{path}&{query}
+}
