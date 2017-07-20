@@ -6,5 +6,7 @@ imports.js
 runner.js
 Gulpfile.js
 jsconfig.json
+package.json
+package-lock.json
 *.sh
 .dummy
