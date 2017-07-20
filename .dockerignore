@@ -2,7 +2,6 @@
 node_modules/
 clientside/
 public/phpinfo.php
-Gulpfile.js
 imports.js
 jsconfig.json
 *.sh
