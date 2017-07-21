@@ -21,12 +21,12 @@ function writeConfig (args) {
     if (os.platform() === 'win32') {
       const r = cp.execSync(`nslookup ${lookup}`).toString()
       const ip = r.match(/\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}$/gm)
-      apihost.host = prefix + ip[1]
+      apihost.host = prefix + ip[1].trim()
     } else {
       lookup = lookup.replace('.com.', '.com')
       lookup = lookup.replace('r', '@r')
       const ip = cp.execSync(`dig +short ${lookup}`).toString()
-      apihost.host = ip
+      apihost.host = ip.trim()
     }
   } else if (args.length === 3) {
     if (args[2].search(/-h|--help/) !== -1) displayUsage()
