@@ -6,6 +6,7 @@
   "main": "runner.js",
   "scripts": {
     "start": "node runner.js",
+    "configure": "node configure.js",
     "dist": "gulp",
     "clean": "gulp clean"
   },

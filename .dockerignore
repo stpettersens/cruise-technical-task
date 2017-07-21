@@ -2,6 +2,7 @@
 node_modules/
 clientside/
 public/phpinfo.php
+configure.js
 imports.js
 runner.js
 Gulpfile.js

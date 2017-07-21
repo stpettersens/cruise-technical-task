@@ -36,7 +36,7 @@ WORKDIR /usr/src/app
 # Bundle app source.
 COPY . /usr/src/app
 
-# Install dependencies for api server (Node.js "express" application).
+# Install dependencies for API server (Node.js "express" application).
 WORKDIR /usr/src/app/api
 RUN npm install --production
 

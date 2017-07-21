@@ -8,8 +8,8 @@
 
 #### Deploying
 
-* Set the external IP or domain for the api server in `data/apihost.json`.
-> {"host":"http host here","port":8081,"origin":8080}
+* Set the external IP or domain for the API server:
+> `npm run configure`
 
 * Install deployment dependencies for app.
 > `npm install`
