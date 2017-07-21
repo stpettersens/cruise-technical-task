@@ -26,7 +26,7 @@ function writeConfig (args) {
       lookup = lookup.replace('.com.', '.com')
       lookup = lookup.replace('r', '@r')
       const ip = cp.execSync(`dig +short ${lookup}`).toString()
-      apihost.host = ip.trim()
+      apihost.host = prefix + ip.trim()
     }
   } else if (args.length === 3) {
     if (args[2].search(/-h|--help/) !== -1) displayUsage()
