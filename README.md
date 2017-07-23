@@ -5,11 +5,13 @@
 
 * [Node.js + npm](https://nodejs.org/en/)
 * [Docker](https://www.docker.com)
+* [dig](https://linux.die.net/man/1/dig)
 
 #### Deploying
 
 * Set the external IP or domain for the API server:
 > `npm run configure`
+(`node configure.js <IP/Domain> # to set manually`)
 
 * Install deployment dependencies for app.
 > `npm install`
