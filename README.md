@@ -1,6 +1,8 @@
 ### cruise-technical-task
 > :ship: Cruise technical task exercise written with Node.js, PHP/Phalcon and Vue.js.
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
+
 #### Dependencies
 
 * [Node.js + npm](https://nodejs.org/en/)
