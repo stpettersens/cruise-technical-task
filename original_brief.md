@@ -1,4 +1,4 @@
-#### www.CRUISE.co.uk Technical Task
+#### Technical Task
 
 * Make a single page website 
 * Website must comprise of
