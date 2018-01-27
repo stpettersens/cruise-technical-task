@@ -30,7 +30,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-vuecc": "^0.2.0",
     "gulp-wait": "0.0.2",
-    "jquery": "^2.2.4",
+    "jquery": "*",
     "shelljs": "^0.7.8",
     "vue": "^1.0.28"
   }
